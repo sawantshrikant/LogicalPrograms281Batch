@@ -10,7 +10,7 @@ public class Program
         bool flag = true;
         while (flag)
         {
-            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Prime Number\n4. Exit\nEnter your option to execute: ");
+            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Prime Number\n4. Reverse A Number \n5. Exit\nEnter your option to execute: ");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -48,8 +48,15 @@ public class Program
                         Console.WriteLine(primeinput + " is not a Prime Number");
                     }
                     break;
-
                 case 4:
+                    ReverseANumber reverse = new ReverseANumber();
+                    Console.WriteLine("Enter a Number to Reverse A Number:");
+                    int Reverseinput = Convert.ToInt32(Console.ReadLine());
+                    int ReversedNumber = reverse.ReverseNumber(Reverseinput);
+                    Console.WriteLine("Reversed Number :" + ReversedNumber);
+                    break;
+
+                case 5:
                     flag = false;
                     break;
                 default:
