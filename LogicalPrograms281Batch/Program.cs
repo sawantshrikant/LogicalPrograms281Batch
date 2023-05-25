@@ -1,5 +1,6 @@
 ﻿using System;
 using LogicalPrograms281Batch;
+using LogicalPrograms281Batch_;
 
 public class Program
 {
@@ -9,7 +10,7 @@ public class Program
         bool flag = true;
         while (flag)
         {
-            Console.Write("1. Fibonacci\n2. Exit\nEnter your option to execute: ");
+            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Exit\nEnter your option to execute: ");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -20,6 +21,20 @@ public class Program
                     fib.PrintFibonacciSeries(num);
                     break;
                 case 2:
+                    PerfectNumber perf = new PerfectNumber();
+                    Console.Write("Enter a number to check if it's a perfect number: ");
+                    int input = Convert.ToInt32(Console.ReadLine());
+                   bool IsPerfect = perf.IsPerfectNumber(input);
+                    if (IsPerfect)
+                    {
+                        Console.WriteLine(input + " is a perfect number.");
+                    }
+                    else
+                    {
+                        Console.WriteLine(input + " is not a perfect number.");
+                    }
+                    break;
+                case 3:
                     flag = false;
                     break;
                 default:
