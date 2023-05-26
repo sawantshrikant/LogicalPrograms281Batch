@@ -10,7 +10,7 @@ public class Program
         bool flag = true;
         while (flag)
         {
-            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Prime Number\n4. Reverse A Number \n5. Exit\nEnter your option to execute: ");
+            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Prime Number\n4. Reverse A Number\n5. Coupon Numbers \n6. Exit\nEnter your option to execute: ");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -55,8 +55,13 @@ public class Program
                     int ReversedNumber = reverse.ReverseNumber(Reverseinput);
                     Console.WriteLine("Reversed Number :" + ReversedNumber);
                     break;
-
                 case 5:
+                    Console.WriteLine("Enter the number of distinct coupon numbers: ");
+                    int couponCount = Convert.ToInt32(Console.ReadLine());
+                    int attempts = CouponNumbers.GenerateDistinctCouponNumbers(couponCount);
+                    Console.WriteLine($"Total random numbers needed to have all distinct numbers: {attempts}");
+                    break;
+                case 6:
                     flag = false;
                     break;
                 default:
